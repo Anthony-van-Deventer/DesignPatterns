@@ -1,21 +1,36 @@
 package builders;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Class {
     private String className;
-    private List<String> classMembers;
+    private List<ClassMember> classMembers = new ArrayList<>();
 
-    public Class(CodeBuilder cb) {
-        this.className = cb.;
-        this.classMembers = classMembers;
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public void addClassMembers(ClassMember classMember) {
+        this.classMembers.add(classMember);
+    }
+
+    public Class() {
     }
 
     public String getClassName() {
         return className;
     }
 
-    public List<String> getClassMembers() {
+    @Override
+    public String toString() {
+        return "Class{" +
+                "className='" + className + '\'' +
+                ", classMembers=" + classMembers +
+                '}';
+    }
+
+    public List<ClassMember> getClassMembers() {
         return classMembers;
     }
 }
